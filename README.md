@@ -111,6 +111,15 @@ python test.py --checkpoint checkpoints/best_model.pth --eval_hierarchy
 
 ```
 
+### 5. Baseline training details
+
+Specifically, our standardized training protocol adopts a tranformer architecture with a pre-trained MiT-B2 encoder, optimized for memory efficiency using PyTorch's DataParallel across multiple GPUs and Automatic Mixed Precision (AMP). The models were trained for 85 epochs with a total batch size of 24 using the AdamW optimizer (initial learning rate of 8e-5, weight decay of 5e-5), dynamically modulated by a OneCycleLR scheduler (pct_start=0.3). Aligned with Equation (4) in our manuscript, the overall optimization objective comprises a robust composite of Cross-Entropy, Tversky, and Focal losses for multi-level hierarchical segmentation, alongside a Hierarchy Consistency Loss ($\lambda_{hc}=0.3$) and a CLIP-based knowledge distillation loss. Finally, to ensure rigorous and unbiased evaluation, a fixed random seed (42) was globally enforced across all modules during our standard 5-fold cross-validation strategy, which was accompanied by an early stopping mechanism that halts training if the validation mIoU does not improve for 15 consecutive epochs.
+
+To train the model from scratch following these standardized baseline configurations:
+
+```bash
+python train_multigpu.py
+
 ## 🏆 Benchmark Results
 
 Performance comparison on the LuoJia-FG test set. **CLIP-HCNet** achieves state-of-the-art results, particularly in fine-grained (L3) metrics.
