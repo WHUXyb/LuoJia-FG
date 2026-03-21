@@ -51,6 +51,16 @@ Download Link: https://pan.baidu.com/s/1f2Mv9YnrB05PHz6UMCR1Kg?pwd=0onh
 
 Access Code: 0onh
 
+### Dataset Download (Version: v1.0)
+
+To ensure data integrity during downloading, please verify the SHA256 checksums of the downloaded files.
+
+| File Name | Description | SHA256 Checksum | Download Link |
+| :--- | :--- | :--- | :--- |
+| `train.rar` | Training set | `1725917250ee2ba41a47e2cf49654fc6bbec0be33c00e1ecbcd2e7b9684c25ce` | [Link] |
+| `val.rar` | Validation set | `cf49d468cf477e5d4fafdb40c62fc317c2310a2c62a0bfb0a34f925dc5f2ef2b` | [Link] |
+| `test.rar` | Testing set | `270699e2336cedece96d4790ff18902051839bb1186973cede0eeb78fb640bb6` | [Link] |
+
 ### Taxonomy Visualization
 
 *(Place your `sunburst chart` image here, e.g., `assets/sunburst.png`)*
